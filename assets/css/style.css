@@ -1,0 +1,584 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body { 
+    background-image: url(./../media/carbon_fibre.png);
+    overflow-x: hidden;
+}
+
+.btn-wsp { 
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    bottom: 30px;
+    right: 30px;
+    background: green;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+.btn-wsp:hover { 
+    text-decoration: none;
+    color: green;
+    background: white;
+}
+
+.topNav { 
+    background: linear-gradient(to bottom,  rgb(19, 18, 18) 35%, rgba(19, 18, 18, 0) 100%);
+    overflow: hidden; 
+    -webkit-box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.2); 
+    box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.2);
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.topNav__wpp { 
+    height: 5vh;
+}
+
+
+.topNav__ul { 
+    display: flex;
+    flex-direction: row;
+}
+
+.topNav__ul__li{ 
+    padding: 14px 16px;
+    list-style-type: none;
+}
+
+@font-face {
+    font-family:oswald;
+    src: url(./../fonts/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: dm;
+    src: url(./../fonts/DMSerifDisplay-Italic.ttf)
+}
+.topNav__ul__li__a { 
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    float: left;
+    font-family: oswald;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.topNav__ul li:hover { 
+    background-color: rgba(255, 68, 0, 0.623);
+    color: rgb(0, 0, 0);
+    transition: .3s;
+}
+
+.topNav__ul #active { 
+    background-color: rgba(255, 68, 0, 0.623);
+    color: white;
+}
+
+.menuIcon img { 
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+}
+
+.menuIcon, #check { 
+    display: none;
+}
+
+@media (max-width: 950px) { 
+    .checkBtn { 
+        display: block;
+    }
+    
+    .menuIcon { 
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+
+    .topNav__ul { 
+        display: block;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: #222;
+        width: 100%;
+        height: min-content;
+        right: 0;
+        z-index: 999999;
+    }
+    .topNav__ul__li { 
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    .topNav__ul__li:last-child { 
+        padding: 2rem;
+    }
+
+    #check:checked ~ ul { 
+        left: 0;
+    }
+} 
+
+
+
+
+#hero { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 84vh;
+    background-image: linear-gradient(
+    0deg,rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5) 
+    )
+    ,url(./../media/Retro-red-car-front-view-FIAT_3840x2160.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+}
+#tituloPrincipal { 
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-size: 50px;
+    font-family: dm;
+    letter-spacing: 7px;
+}
+
+.btnNeon { 
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 4px;
+    font-size: 44px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.btnNeon:hover { 
+    background: rgba(255, 68, 0, 0.623);
+    box-shadow: 0 0 10px rgba(255, 68, 0, 0.623), 0 0 40px rgba(255, 68, 0, 0.623), 0 0 80px rgba(255, 68, 0, 0.623);
+    transition-delay: 1s;
+}
+.btnNeon span { 
+    position: absolute;
+    display: block;
+}
+#span1 { 
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,rgba(255, 68, 0, 0.623));
+}
+
+.btnNeon:hover #span1 { 
+    left: 100%;
+    transition: 1s;
+}
+#span3 { 
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent, rgba(255, 68, 0, 0.623));
+}
+
+.btnNeon:hover #span3 { 
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+#span2 { 
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,rgba(255, 68, 0, 0.623));
+}
+
+.btnNeon:hover #span2 { 
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+#span4 { 
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,rgba(255, 68, 0, 0.623));
+}
+
+.btnNeon:hover #span4 { 
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+@media screen and (max-width:800px) { 
+    #tituloPrincipal { 
+        font-size: 30px;
+    }
+    .btnNeon { 
+        font-size: 25px;
+    }
+}
+
+
+#botonP { 
+
+    /* font-size: 1.8em;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.404);
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.623);
+    transition: all 300ms ease; */
+}
+
+/* button:hover { 
+    background-color: rgba(22, 21, 21, 0.623);
+} */
+
+.bodyNosotros { 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nosotrosSection { 
+    background: url(./../media/taller-mecanico.jpg) no-repeat left;
+    background-size: 55%;
+    overflow: hidden;
+    padding: 100px 0;
+}
+.innerContainer { 
+    width: 55%;
+    float: right;
+    background-color: #222;
+    padding: 150px;
+}
+
+.innerContainer h1 { 
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #f2f2f2;
+}
+
+.text { 
+    font-size: 20px;
+    color: #efefef9a;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px; 
+}
+
+.skills { 
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 13px;
+    color: azure;
+}
+
+@media screen and (max-width:1200px) {
+    .innerContainer { 
+        padding: 80px;
+    }
+    
+}
+
+@media screen and (max-width:1000px) {
+    .nosotrosSection { 
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .innerContainer { 
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px) {
+    .nosotrosSection { 
+        padding: 0;
+    }
+    .innerContainer { 
+        padding: 60px;
+    }
+}
+
+
+#tituloNoticias { 
+    text-align: center;
+    color: saddlebrown;
+    padding-bottom: 20px;
+    text-decoration: underline red;
+}
+
+#sectionNoticias { 
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.noticiasAutos {
+width: 300px;
+border-color: rgb(206, 204, 204);
+border-style: solid;
+border-width: 2px;
+justify-self: center;
+align-self: center;
+background-color: #efefef;
+
+}
+
+.noticiasAutos__img {
+width: 100%;
+}
+
+.noticiasAutos__description {
+padding-left: 10px;
+padding-right: 10px;
+display: inline-block;
+}
+
+.noticiasAutos__description__titulo { 
+    margin-top: 10px;
+}
+
+.noticiasAutos__description__articulo { 
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 23px;
+}
+
+@media screen and (max-width:800px) { 
+    #sectionNoticias { 
+        width: 95%;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 10px;
+    }
+}
+@media screen and (max-width:500px) { 
+    #sectionNoticias { 
+        width: 90%;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+
+.contactoContainer { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.contactoContainer__form { 
+    background-color: rgba(160, 49, 9, 0.884);
+    width: 450px;
+    height: fit-content;
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+
+.contactoContainer__form h2 { 
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input, textarea { 
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    font-size: 17px;
+    border: none;
+}
+textarea { 
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+#botonContacto { 
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}
+#botonContacto:hover { 
+    cursor: pointer;
+    background-color: rgb(19, 18, 18);
+}
+
+.bodyServicios { 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blogPost { 
+    width: min(1200px, 100%); 
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.post { 
+    width: calc(33% - 10px); 
+    overflow: hidden;
+}
+
+.postImg { 
+    width: 100%;
+    border-radius: 6px;
+    transition: .3s linear;
+}
+
+.postContent { 
+    background-color: #ffffffdd;
+    margin: 0 20px;
+    padding: 30px;
+    border-radius: 6px;
+    transform: translateY(-60px);
+    transition: .3s linear;
+}
+
+.postContent h3 { 
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.blogDescription { 
+    font-size: 15px;
+    font-style: italic;
+    color: cadetblue;
+}
+
+.post:hover .postImg { 
+    transform: translateY(20px);
+}
+
+.post:hover .postContent { 
+    transform: translateY(-80px);
+}
+
+@media screen and (max-width: 1200px) { 
+    .blogPost { 
+        justify-content: center;
+    }
+
+    .post { 
+        width: min(600px, 100%);
+    }
+}
+
+
+.pieDepagina { 
+    width: 100%;
+    background-color: #070a0e; 
+}
+
+.pieDepagina .grupo1 { 
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 50px 0px;
+}
+
+.pieDepagina .grupo1 .box figure { 
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pieDepagina .grupo1 .box figure img { 
+    width: 250px;
+}
+
+.pieDepagina .grupo1 .box h2 { 
+    color: white;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pieDepagina .grupo1 .box p { 
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pieDepagina .grupo1 .redSocial a { 
+    display: inline-block;
+    text-decoration: none;
+    width: 46px;
+    height: 45px;
+    line-height: 45px;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pieDepagina .grupo1 .redSocial a:hover { 
+    color: aqua;
+}
+
+.pieDepagina .grupo2 { 
+    background-color: #0d171f;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pieDepagina .grupo2 small { 
+    font-size: 15px;
+}
+@media screen and (max-width:800px) {
+    .pieDepagina .grupo1 { 
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px; }
+}
+
+
+    
+
+
+
+
