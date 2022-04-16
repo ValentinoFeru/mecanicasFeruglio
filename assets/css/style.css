@@ -167,6 +167,11 @@ body {
     letter-spacing: 7px;
 }
 
+#tituloPrincipal:hover { 
+    color: aqua;
+    transition: 0.3s;
+}
+
 .btnNeon { 
     position: relative;
     display: inline-block;
